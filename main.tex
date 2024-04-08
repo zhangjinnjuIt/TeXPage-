@@ -1,0 +1,345 @@
+% !Mode:: "TeX:UTF-8"
+%# -*- coding:utf-8 -*-
+
+%% 南京大学学位论文的示例文档
+%% 作者：njuhan: https://github.com/njuHan
+%% 源模版repo: https://github.com/njuHan/njuthesis-nju-thesis-template
+
+\documentclass[winfonts,master,twoside]{njuthesis}
+%% 审阅模式很重要，命令是下方使用的/blind
+%% njuthesis 文档类的可选参数有：
+%%   winfonts, linuxfonts, macfonts, adobefonts winfonts 选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
+%%   phd/master/bachelor 选择博士/硕士/学士论文
+%%   twoside 或 oneside 指定排版的文档为双面打印或单面打印格式（twoside会使得chapter 章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）
+%%   nobackinfo 取消封二页导师签名信息。注意，按照南大的规定，是需要签名页的。
+\usepackage{listings}  % 加载 listings 宏包  
+\usepackage{xcolor}  
+\usepackage{caption}  
+\usepackage{longtable}  
+
+\newsavebox{\mylistingbox} 
+\newsavebox{\esconfigbox} 
+\newsavebox{\esconfigindexbox} 
+\newsavebox{\beatsdata} 
+\newsavebox{\bmqSchema} 
+
+\newsavebox{\datashangbaoliucheng} 
+\newsavebox{\kehuduanshangbao} 
+\newsavebox{\pulldatalaqudata} 
+\newsavebox{\jqluojiyuju} 
+\newsavebox{\flinkshujuchuli} 
+\newsavebox{\datajuheluoji} 
+\newsavebox{\realSearchchuli } 
+\newsavebox{\offlineSearchchulicode } 
+\newsavebox{\offlineSearchTimeSaoMiao } 
+\newsavebox{\gaojingpingtaijianceluoji } 
+\newsavebox{\getRuleError } 
+\newsavebox{\detectRules } 
+\newsavebox{\gudingyuzhi } 
+\newsavebox{\AnulusAnomalyDetector} 
+\newsavebox{\AnulusAnomalyDetectortwo} 
+\newsavebox{\datajuheluojitwo} 
+\newsavebox{\detectRulesOne} 
+\newsavebox{\detectRulesTwo} 
+\newsavebox{\flinkshujuchulione} 
+\newsavebox{\flinkshujuchulitwo} 
+\newsavebox{\getRuleErrorOne} 
+\newsavebox{\getRuleErrorTwo} 
+\newsavebox{\offlineSearchTimeSaoMiaoOne} 
+\newsavebox{\offlineSearchTimeSaoMiaoTwo} 
+\newsavebox{\AnulusAnomalyDetectorOne} 
+\newsavebox{\AnulusAnomalyDetectorTwo} 
+\newsavebox{\mylistingboxOne} 
+\newsavebox{\mylistingboxTwo} 
+
+
+
+
+
+
+% listings 设置  
+\lstset{  
+    language=Java,               % 设置代码语言为Java    
+    basicstyle=\ttfamily\small,  % 使用小字体  
+    frame=tblr,                  % 顶部和底部边框  
+    columns=fullflexible,        % 灵活调整列宽  
+    keepspaces=true,             % 保持空格  
+    showstringspaces=false,      % 不显示字符串中的空格  
+    lineskip=-2pt,                % 减小行间距 
+    keywordstyle=\ttfamily\small, % 设置为正常字体，不加粗 
+    breaklines=true, % 允许自动换行  
+    breakatwhitespace=false, % 可选：是否在空白字符处换行，设为true时会在空白处换行，这有助于保持代码的语义完整性  
+    showstringspaces=false, % 防止字符串中的空格被显示出来 
+}  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set up labelformat and labelsep for subfigure 详见： http://www.latexstudio.net/archives/8652.html
+\captionsetup[subfigure]{labelformat=simple, labelsep=space}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置《国家图书馆封面》的内容，仅博士论文才需要填写
+
+% 设置论文按照《中国图书资料分类法》的分类编号
+%\classification{0175.2}
+% 设置论文按照《国际十进分类法UDC》的分类编号
+% 该编号可在下述网址查询：http://www.udcc.org/udcsummary/php/index.php?lang=chi
+%\udc{004.72}
+% 国家图书馆封面上的论文标题第一行，不可换行。此属性可选，默认值为通过\title设置的标题。
+%\nlctitlea{论文标题第一行}
+% 国家图书馆封面上的论文标题第二行，不可换行。此属性可选，默认值为空白。
+%\nlctitleb{论文标题第二行}
+% 国家图书馆封面上的论文标题第三行，不可换行。此属性可选，默认值为空白。
+%\nlctitlec{}
+% 导师的单位名称及地址
+%\supervisorinfo{南京大学计算机科学与技术系~~南京市汉口路22号~~210093}
+% 答辩委员会主席
+%\chairman{张三丰~~教授}
+% 第一位评阅人
+%\reviewera{阳顶天~~教授}
+% 第二位评阅人
+%\reviewerb{张无忌~~副教授}
+% 第三位评阅人
+%\reviewerc{黄裳~~教授}
+% 第四位评阅人
+%\reviewerd{郭靖~~研究员}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的中文封面
+
+% 单行论文标题，不可换行
+\title{流媒体埋点查询管理系统
+设计与实现
+}
+
+% 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义，
+% 使用以下3行：
+%\title{} %用于覆盖单行标题内容为空
+%\titlea{长标题第一行}  %第一行标题写这里
+%\titleb{长标题第二行用于长标题换行} %第二行标题写这里
+% 注意： \title 不能都注释，它用于控制标题选择双行还是单行。\title{}如果内容为空，则编译\titlea{},titleb{}双行标题，否则编译单行标题
+
+
+% 论文作者姓名
+\author{张进}
+% 论文作者联系电话
+\telphone{15251856919}
+% 论文作者电子邮件地址
+\email{zhangjin@smail.nju.edu.cn}
+% 论文作者学生证号
+\studentnum{522022320202}
+% 论文作者入学年份（年级）
+\grade{2022}
+% 论文作者毕业年份（届）, 出版授权书的学位年度
+\graduateyear{2024}
+% 导师姓名职称
+\supervisor{伏晓副教授}
+% 导师的联系电话
+\supervisortelphone{}
+% 论文作者的学科与专业方向
+\major{工程硕士（软件工程领域）}
+% 论文作者的研究方向
+\researchfield{软件工程}
+% 论文作者所在院系的中文名称
+\department{软件学院}
+% 论文作者所在学校或机构的名称。此属性可选，默认值为``南京大学''。
+\institute{南京大学}
+% 论文的提交日期，需设置年、月、日。
+\submitdate{2024年 4 月 15 日}
+% 论文的答辩日期，需设置年、月、日。
+\defenddate{2024年 5 月 24 日}
+% 论文的定稿日期，需设置年、月、日。
+% 此属性可选，若注释\date{}，则默认值为最后一次编译时的日期，精确到日。
+% \date{2019年5月20日}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的英文封面
+
+% 论文的英文标题，不可换行
+\englishtitle{Streaming Media Buried Point Management Query System}
+% 论文作者姓名的拼音
+\englishauthor{Zhang, Jin}
+% 导师姓名职称的英文
+\englishsupervisor{Fu Xiao}
+% 论文作者学科与专业的英文名
+\englishmajor{Software Engineering}
+% 论文作者所在院系的英文名称
+\englishdepartment{Software Institute}
+% 论文作者所在学校或机构的英文名称。此属性可选，默认值为``Nanjing University''。
+\englishinstitute{Nanjing University}
+% 论文完成日期的英文形式，它将出现在英文封面下方。需设置年、月、日。日期格式使用美国的日期
+% 格式，即``Month day, year''，其中``Month''为月份的英文名全称，首字母大写；``day''为
+% 该月中日期的阿拉伯数字表示；``year''为年份的四位阿拉伯数字表示。
+% 此属性可选，若注释掉\englishdate{}，则默认值为最后一次编译时的日期。
+% \englishdate{May 20, 2019}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的中文摘要
+
+% 设置中文摘要页面的论文标题及副标题的第一行。
+% 此属性可选，其默认值为使用|\title|命令所设置的论文标题
+%\abstracttitlea{标题第一行}
+% 设置中文摘要页面的论文标题及副标题的第二行。
+% 此属性可选，其默认值为空白
+%\abstracttitleb{标题第二行用于长标题换行}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的英文摘要
+
+% 设置英文摘要页面的论文标题及副标题的第一行。
+% 此属性可选，其默认值为使用|\englishtitle|命令所设置的论文标题
+%\englishabstracttitlea{englishabstracttitlea}
+% 设置英文摘要页面的论文标题及副标题的第二行。
+% 此属性可选，其默认值为空白
+%\englishabstracttitleb{nglishabstracttitleb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 盲审命令，空白字段设置请看 .cls文件 \newcommand*{\blind}
+%% 此外，请按照盲审要求自行去掉个人简历、致谢等页面中的个人信息
+%%**********************！！！非常重要的盲审命令，送审前必选！！！****************
+%\blind
+%%**********************！！！非常重要的盲审命令，送审前必选！！！****************
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 制作国家图书馆封面（博士学位论文才需要）
+%\makenlctitle
+% 制作中文封面
+\maketitle
+% 制作英文封面
+\makeenglishtitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 开始前言部分
+\frontmatter
+
+\begin{abstract}
+ 现如今短视频已经成为人们消遣时间的主要手段，字节跳动公司将短视频业务推广到全球，抖音、tiktok下载量这几年已经成为APP商店的榜首。随之，巨大的用户量就会产生巨大的数据量，字节跳动每日的日志数据量级达到PB级别，这对数据的存储、管理、检索提出了新的要求。基于ElasticSearch系统容易产生大数据量下写入堆积而导致的数据写入延迟，从而使数据查询不到或者不全，并且基于Java开发的ElasticSearch对内存、磁盘、CPU的要求都比较高。还有巨大的运维压力，这些对一些小公司来说是一个巨大的成本。
+ 
+本文引入Trace系统来对上述问题进行解决。Trace平台是字节跳动视频架构团队的重要质量保障工具，主要服务直播、点播两大产品，每天服务百人级别的工程迭代和故障排查，例如连麦、RTC、流信息、音视频、卡顿、黑屏问题等等。由于这些线上问题的定位和排查浪费了大量的人力和注意力，因此需要工具来提高问题发现、问题诊断、问题定位、问题恢复的效率来为开发、运营和客服提效。Trace平台的主要功能和ELK日志系统相似，都是存储、检索日志的系统。本文将从数据上报、数据处理、数据查询和告警平台四大功能进行介绍。
+埋点数据经SDK上报以后，再经过数据处理元数据持久化ElasticSearch、全量数据持久化到动态扩展BMQ集群。数据查询时先查询ElasticSearch获取记录的UUID，再经过Hash计算全量所在BMQ位置进而获取全量数据给用户，也提供了离线查询来兜底实时查询失败。用户可以自定义告警规则，提高了问题定位的速度和准确性。
+
+Trace平台通过引入基于HDFS的分布式MQ做到了早高峰数据量存储的云原生,降低了存储成本，并且实时的对MQ建立哈希索引，使得磁盘查询变为O(1)复杂度。在前端界面提供了埋点字段的的管理，对应到后端就是对Mysql埋点字段表的管理，数据处理通过查询Mysql中的埋点字段，将埋点字段写入ElasticSearch中，埋点字段的数量使用LRU算法管理，全量字段经过Flink任务处理后写入MQ。为了进一步降低定位问题的困难，提出了告警平台按照预先规则自动检测，出现问题自动告警通知。Trace系统服务视频架构团队对内提供定位问题能力，一直有条不紊的运行，并不断的进行迭代更新，为数据查询提供了新的解决方案。
+
+\keywords{Trace平台；BMQ；HDFS；ElasticSearch}
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文的英文摘要
+\begin{englishabstract}
+Nowadays, short videos have become the main way for people to spend time. ByteDance has promoted the short video business to the world. Douyin and TikTok downloads have topped the list of APP stores in recent years. Subsequently, a huge number of users will generate a huge amount of data. ByteDance's daily log data reaches the PB level, which puts forward new requirements for data storage, management, and retrieval. Systems based on ElasticSearch are prone to data writing delays caused by write accumulation under large amounts of data, resulting in unavailable or incomplete data queries. ElasticSearch developed based on Java has relatively high requirements for memory, disk, and CPU. There is also huge operation and maintenance pressure, which is a huge cost for some small companies.
+ 
+This thesis introduces the Trace system to solve the above problems. The Trace platform is an important quality assurance tool for the ByteDance video architecture team. It mainly serves two major products: live broadcast and on-demand video. It serves hundreds of people every day for engineering iteration and troubleshooting, such as continuous wheat, RTC, streaming information, audio and video, lagging, etc. Black screen issues and more. Since locating and troubleshooting these online problems wastes a lot of manpower and attention, tools are needed to improve the efficiency of problem discovery, problem diagnosis, problem location, and problem recovery to improve development, operations, and customer service. The main functions of the Trace platform are similar to the ELK log system. They are both systems for storing and retrieving logs. This article will introduce the four major functions of data reporting, data processing, data query and alarm platform.
+After the hidden data is reported through the SDK, it is then processed through data processing metadata persistence ElasticSearch and full data persistence to dynamically expand the BMQ cluster. When querying data, first query ElasticSearch to obtain the UUID of the record, and then calculate the BMQ location of the full amount through Hash to obtain the full amount of data for the user. Offline query is also provided to cover up real-time query failures. Users can customize alarm rules, which improves the speed and accuracy of problem location.
+
+By introducing distributed MQ based on HDFS, the Trace platform achieves cloud-native storage of morning peak data volume, reduces storage costs, and establishes a hash index for MQ in real time, making disk queries O(1) complexity. The front-end interface provides management of buried fields, which corresponds to the back-end management of the Mysql buried field table. Data processing is done by querying the buried fields in Mysql and writing the buried fields into ElasticSearch. The quantity is managed using the LRU algorithm, and the full quantity field is written to MQ after being processed by the Flink task. In order to further reduce the difficulty of locating problems, an alarm platform is proposed to automatically detect according to pre-set rules and automatically notify alarms when problems occur. The Trace system service video architecture team provides internal problem locating capabilities, has been operating in an orderly manner, and is constantly iteratively updated to provide new solutions for data query.
+
+	% 英文关键词。关键词之间用英文半角逗号隔开，末尾无符号。
+	\englishkeywords{Trace platform, MQ, HDFS, ElasticSearch}
+\end{englishabstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文的前言，应放在目录之前，中英文摘要之后，一般不需要
+%
+%\begin{preface}
+%
+%在过去的40年中，手写中文文本领域识别（HCTR）取得了很大的进展[1,2]。
+%
+%\vspace{1cm}
+%\begin{flushright}
+%饶安逸\\
+%2018年5月15日于南大仙林
+%\end{flushright}
+%
+%\end{preface}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成论文目录
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成插图清单。如无需插图清单则可注释掉下述语句。
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成附表清单。如无需附表清单则可注释掉下述语句。
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 开始正文部分
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 学位论文的正文应以《绪论》作为第一章，本模板是按照自身功能模块组织的，并非论文中的章节安排
+
+\input{chapter/Title.tex}
+
+\input{chapter/MainBody.tex}
+
+\input{chapter/Table.tex}
+
+\input{chapter/Figure.tex}
+
+\input{chapter/Formula.tex}
+
+\input{chapter/Algorithm.tex}
+
+\input{chapter/Reference.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 致谢，应放在结论之后
+\begin{acknowledgement}
+写到这里，我的论文也到了尾声，这也代表着我的两年研究生生活即将结束。在这里，我对在这两年研究生期间给予我帮助、关爱的导师、学长、同学、家人表示真挚的感谢。
+
+感谢伏晓老师，感谢伏老师在科研学术论文和毕业论文上对我的悉心指导。
+在科研上我选择了智能目录项目，伏老师在每周的汇报中都会耐心的进行工作进展点评，使得项目能够有条不紊的进行。最终学习了很多大数据相关的知识，这也为去字节跳动实习打下良好基础。在毕业论文书写期间，每一个版本伏老师都会尽快地回复修改意见，详细地批注和亲自帮忙调整。
+
+感谢字节跳动公司Data部门的彭思韬、徐瑞志在论文的定题、项目的需求分析和架构设计都给予我不少的建议。也正是由于你们的悉心教导，让项目开展的十分顺利，让我在项目开发上获得了技术提升。从项目设计、实现、测试到上线，正是在和你们对问题的探讨交流过程中，我受益颇深，从你们身上学到非常多的东西。同时感谢实习期间龚成凯在找工作上的交流，使得屡屡跌入低谷的我得到慰藉，愿我们在未来的职场中能够继续互相帮助，相互交流。
+
+感谢我的室友张天乐和张国斌，在两年的硕士生活中，我们一起做饭、一起做项目、一起玩耍。彼此关照、彼此学习、彼此交流，从你们身上，我学到很多，也让我成长很多。
+
+最后，感谢我的家人，感谢你们对我的陪伴、支持和关爱。每当我遇到困难陷入困境，都能得到来自你们的温暖。正是由于你们对我的关爱，才塑造一个积极乐观、热爱生活的我。
+
+\end{acknowledgement}
+
+
+
+
+% 参考文献。应放在\backmatter之前。
+% 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句。
+%\nocite{*}
+\bibliography{sample}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 书籍附件
+\backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 作者简历与科研成果页，应放在backmatter之后
+\begin{resume}
+% 论文作者身份简介，一句话即可。
+\begin{authorinfo}
+\noindent 张进，男，汉族，2000年7月出生，山东省德州人。
+\end{authorinfo}
+% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
+\begin{education}
+\item[2022年9月 --- 2024年6月] 南京大学软件学院 \hfill 硕士
+\item[2018年9月 --- 2022年6月] 青岛科技大学信息科学科技学院 \hfill 本科
+\end{education}
+% 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
+
+% 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
+
+\end{resume}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成《学位论文出版授权书》页面，应放在最后一页
+%\makelicense
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

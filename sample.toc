@@ -1,0 +1,35 @@
+\contentsline {chapter}{目\hspace {2em}录}{v}{chapter*.1}% 
+\contentsline {chapter}{插图清单}{vii}{chapter*.2}% 
+\contentsline {chapter}{附表清单}{ix}{chapter*.3}% 
+\contentsline {chapter}{\numberline {1}标题}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}这是节标题}{1}{section.1.1}% 
+\contentsline {subsection}{\numberline {1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}这是小节标题}{1}{subsection.1.1.1}% 
+\contentsline {chapter}{\numberline {2}正文}{3}{chapter.2}% 
+\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}正文书写的小技巧}{3}{section.2.1}% 
+\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}一些正文中的标记}{3}{section.2.2}% 
+\contentsline {section}{\numberline {2\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}注意软换行的使用}{4}{section.2.3}% 
+\contentsline {chapter}{\numberline {3}表格}{5}{chapter.3}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}表格与表格引用的基本概念}{5}{section.3.1}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}基本表格}{5}{section.3.2}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}表格单元跨列}{5}{section.3.3}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}表格单元跨行}{6}{section.3.4}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}5}表格与图形位置}{6}{section.3.5}% 
+\contentsline {section}{\numberline {3\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}6}普通表格（非三线表）}{7}{section.3.6}% 
+\contentsline {chapter}{\numberline {4}图形}{9}{chapter.4}% 
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}基本图形}{9}{section.4.1}% 
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}引用代码}{9}{section.4.2}% 
+\contentsline {section}{\numberline {4\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}其它图引用}{9}{section.4.3}% 
+\contentsline {chapter}{\numberline {5}公式}{13}{chapter.5}% 
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}公式5.1与论证}{13}{section.5.1}% 
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}2}公式5.2与论证}{13}{section.5.2}% 
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}3}公式5.3与论证}{14}{section.5.3}% 
+\contentsline {section}{\numberline {5\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}4}原模板中的其它公式}{14}{section.5.4}% 
+\contentsline {chapter}{\numberline {6}算法}{17}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}论文引用}{19}{chapter.7}% 
+\contentsline {section}{\numberline {7\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}引文相关}{19}{section.7.1}% 
+\contentsline {chapter}{致\hspace {2em}谢}{21}{chapter*.11}% 
+\contentsline {chapter}{参考文献}{23}{chapter*.12}% 
+\contentsline {chapter}{\numberline {A}附录代码}{25}{appendix.A}% 
+\contentsline {section}{\numberline {A\tmspace +\thinmuskip {.1667em}.\tmspace +\thinmuskip {.1667em}1}main函数}{25}{section.A.1}% 
+\contentsline {chapter}{简历与科研成果}{27}{appendix*.13}% 
+\contentsfinish 

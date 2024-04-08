@@ -1,0 +1,65 @@
+\begin{thebibliography}{1}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{DBLP:journals/computer/EgyedZHD18}
+\bibauthor{EGYED A\@, ZEMAN K\@, HEHENBERGER P, et~al}\@. \bibtitle{Maintaining
+  Consistency across Engineering Artifacts}\bibmark{[J/OL]}\@.
+  \bibjournal{{IEEE} Computer}\@, \bibyear{2018}\@,
+  \bibvolume{51}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{28\thinspace{}\textnormal{--}\thinspace{}35}\@.
+  \newline\url{https://doi.org/10.1109/MC.2018.1451666}\@.
+
+\bibitem{GanttSystemWeb}
+\bibauthor{GANTTPROJECT开发组}\@.
+  \bibtitle{GanttProject主页}\bibmark{[EB/OL]}\@.
+  \bibpublisher{GanttProject开发组}\@, \bibyear{2020}
+  \bibmodifydate{(2020/3/25)} \bibcitedate{[2020/3/25]}\@.
+  \newline\url{http://www.ganttproject.biz}\@.
+
+\bibitem{Pohl2010Requirements}
+\bibauthor{POHL K}\@. \bibbooktitle{Requirements Engineering - Fundamentals,
+  Principles, and Techniques}\bibmark{[M/OL]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer}\@,
+  \bibyear{2010}\@.
+  \newline\url{http://www.springer.com/computer/swe/book/978-3-642-12577-5?changeHeader}\@.
+
+\bibitem{cyg2006}
+\bibauthor{程远国\@, 尹迪}\@.
+  \bibtitle{基于分布式中间件的传感器网络软件体系结构研究}\bibmark{[J]}\@.
+  \bibjournal{计算机工程与科学}\@,
+  \bibyear{2006}\bibnumber{(s2)}\thinspace{}\textnormal{:
+  }\bibpages{4\thinspace{}\textnormal{--}\thinspace{}5}\@.
+
+\bibitem{DBLP:journals/ml/TingZCZWZ19}
+\bibauthor{TING K~M\@, ZHU Y\@, CARMAN M~J, et~al}\@. \bibtitle{Lowest
+  probability mass neighbour algorithms: relaxing the metric constraint in
+  distance-based neighbourhood algorithms}\bibmark{[J/OL]}\@.
+  \bibjournal{Machine Learning}\@, \bibyear{2019}\@,
+  \bibvolume{108}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{331\thinspace{}\textnormal{--}\thinspace{}376}\@.
+  \newline\url{https://doi.org/10.1007/s10994-018-5737-x}\@.
+
+\end{thebibliography}
